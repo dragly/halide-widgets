@@ -141,7 +141,7 @@ def interact(
     target = hl.Target("wasm-32-wasmrt")
     with tempfile.TemporaryDirectory() as temp_dir:
         temp_dir = Path(temp_dir)
-        include_path = Path(__file__).parent.parent.parent / "include"
+        include_path = Path(hl.install_dir()) / 'include'
         js_path = temp_dir / f"{func_name}.js"
         wasm_path = temp_dir / f"{func_name}.wasm"
         wrapper_path = temp_dir / f"{func_name}_wrapper.cpp"
